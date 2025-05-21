@@ -1,28 +1,98 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Hello HomeController!
+{% endblock %}
 
 {% block body %}
-    {# Hero Section #}
-    <div class="container flex flex-col-reverse mx-auto p-6 lg:flex-row">
-        <!-- Content Container -->
-        <div class="flex flex-col space-y-10 mb-44 lg:mt-16 lg:w-1/2 xl:mb-52">
-          <h1 class="text-5xl text-shadow-amber-700 font-bold text-center lg:text-6xl lg:max-w-md lg:text-left">
-            More than just shorter links
-          </h1>
-          <p class="text-2xl text-center text-gray-400 lg:max-w-md lg:text-left">
-            Build your brand's recognition and get detailed insights on how your
-            links are performing.
-          </p>
-          <div class="mx-auto lg:mx-0">
-            <a href="#" class="py-5 px-10 text-2xl font-bold text-white bg-cyan rounded-full lg:py-4 hover:opacity-70">Get Started</a>
-          </div>
-        </div>
+	{# Hero Section #}
+	<div
+		class="container pt-40 flex flex-col-reverse mx-auto p-6 lg:flex-row">
+		<!-- Content Container -->
+		<div class="flex flex-col space-y-10 mb-10 lg:mt-16 lg:w-1/2">
+			<h1 class="text-5xl font-bold text-center lg:text-6xl lg:max-w-lg lg:text-left">
+				Commencez à apprendre le domaine de l'IT avec des professionnels
+			</h1>
+			<p class="text-xl text-center text-gray-400 lg:max-w-lg lg:text-left">
+				Notre centre de formation en informatique propose des cours en présentiel, adaptés à tous les niveaux. Dans un cadre convivial et encadré par des formateurs 
+																expérimentés, vous développez des compétences pratiques en bureautique, programmation, réseaux ou maintenance. Apprenez efficacement grâce à des exercices concrets et un accompagnement personnalisé.
+			</p>
+			<div class="mx-auto lg:mx-0 flex space-x-8 ">
 
-        <!-- Image -->
-        <div class="mb-24 mx-auto md:w-180 lg:mb-0 lg:w-1/2">
-          <img src="images/illustration-working.svg" alt="">
-        </div>
-      </div>
-    {# End Hero Section #}
+				<div class="w-full bg-gray-100 rounded-full flex justify-between p-1">
+					<input type="text" placeholder="Ques souhaitez-vous apprendre ?" class="px-8 w-full focus:outline-none ">
+					<a href="#" class="py-5 px-10 text-2xl font-bold text-white bg-wecours rounded-full lg:py-4 hover:opacity-70">Commencer</a>
+				</div>
+
+
+			</div>
+		</div>
+
+		<!-- Image -->
+		<div class="mb-24 mx-auto md:w-180 lg:mb-0 lg:w-1/2">
+			<img src="{{asset('build/images/student-1.png')}}" alt="">
+		</div>
+	</div>
+	{# End Hero Section #}
+
+	{# Categories #}
+	<div
+		class="container mx-auto bg-gray-100 p-6">
+		{# titre #}
+		<div id="title" class="space-y-4 mx-auto text-center">
+
+			<h1 class="text-3xl font-bold mx-auto">
+				Decouvrez les catégories des cours
+			</h1>
+			<p class="text-md  opacity-90 max-w-lg mx-auto">
+				Parcourez nos catégories tendance pour découvrir les meilleures options, offrant un large éventail de sujets adaptés à vos centres d’intérêt et à votre niveau d’expérience.
+			</p>
+		</div>
+		{# end titre #}
+
+		{# grille des categories #}
+		<div
+			class="mt-14 mx-auto grid grid-cols-1 gap-4 md:grid-cols-4">
+			{# card #}
+			{% for i in 0..7 %}
+      {# {% tabName = ['Design', 'Developpement', 'IT & Logiciel', 'Audio & Video', 'Mobile', 'Bureautique', 'Cybersécurité', 'Réseau'] %} #}
+				<ul class="list bg-base-100 rounded-box shadow-md">
+
+
+					<li class="list-row">
+						<div><img class="size-15 rounded-box" src="{{asset('/build/images/cat-1.png')}}"/></div>
+						<div>
+							<div class="card-title">Design</div>
+						
+						</div>
+
+						<button class="btn btn-square btn-ghost">
+							<svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+								<g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor">
+									<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+								</g>
+							</svg>
+						</button>
+					</li>
+
+
+				</ul>
+				{# <div class="card bg-base-100 w-96 md:w-80 shadow-sm">
+								<figure>
+									<img src="{{asset('/build/images/cat-2.png')}}" alt="categories" class='object-contain'/>
+								</figure>
+								<div class="card-body">
+									<h2 class="card-title">Design</h2>
+									<p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+									<div class="card-actions justify-end">
+										<button class="btn btn-wecours">Buy Now</button>
+									</div>
+								</div>
+							</div> #}
+			{% endfor %}
+			{# end card #}
+		</div>
+		{# end grille des categories #}
+	</div>
+	{# End Categories #}
+
 {% endblock %}

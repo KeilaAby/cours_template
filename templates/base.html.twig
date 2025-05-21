@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="font-base">
+<html class="font-base" data-theme='light'>
 	<head>
 		<meta charset="UTF-8">
 		<title>
@@ -17,9 +17,9 @@
 	</head>
 	<body>
 		{# Navbar #}
-		<div class="w-full shadow-sm">
+		<div class="w-full shadow-sm fixed bg-white ">
 			<nav
-				class="relative container mx-auto p-6 bg-cyan-400">
+				class="relative container mx-auto p-4 ">
 				<!-- Flex Container For All Items -->
 				<div
 					class="flex items-center justify-between">
@@ -28,7 +28,7 @@
 						class="flex items-center space-x-20">
 						<!-- Logo -->
 						<img
-						src="{{asset('/assets/media/images/logo.jpg')}}" alt="logo_wecours" class="">
+						src="{{asset('/build/images/logo.jpg')}}" alt="logo_wecours" class="size-20 rounded-full">
 						<!-- Left Menu -->
 						<div class="hidden space-x-8 font-bold lg:flex">
 							<a href="#" class="">Cours</a>
@@ -38,9 +38,9 @@
 					</div>
 
 					<!-- Right Buttons Menu -->
-					<div class="hidden items-center space-x-6 font-bold text-grayishViolet lg:flex">
+					<div class="hidden items-center space-x-6 font-bold text-grayishViolet lg:flex ">
 						<div class="hover:text-veryDarkViolet">Se connecter</div>
-						<a href="#" class="px-8 py-3 font-bold text-white bg-primary rounded-full hover:opacity-70">S'inscrire</a>
+						<a href="#" class="px-8 py-3 font-bold text-white bg-wecours rounded-full hover:opacity-70">S'inscrire</a>
 					</div>
 
 					<!-- Hamburger Button -->
