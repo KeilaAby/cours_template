@@ -4,21 +4,22 @@
 {% endblock %}
 
 {% block body %}
+
 	{# Hero Section #}
 	<div
 		class="container pt-40 flex flex-col-reverse mx-auto p-6 lg:flex-row">
 		<!-- Content Container -->
 		<div class="flex flex-col space-y-10 mb-44 lg:mt-16 lg:w-1/2">
-			<h1 class="text-5xl font-bold text-center lg:text-6xl lg:max-w-lg lg:text-left">
+			<h1 class="text-5xl font-bold text-center lg:text-6xl w-full lg:text-left">
 				Commencez à apprendre le domaine de l'IT avec des professionnels
 			</h1>
-			<p class="text-xl text-center text-gray-400 lg:max-w-lg lg:text-left">
+			<p class="text-xl text-center text-gray-400 w-full lg:text-left">
 				Notre centre de formation en informatique propose des cours en présentiel, adaptés à tous les niveaux. Dans un cadre convivial et encadré par des formateurs 
 				expérimentés, vous développez des compétences pratiques en bureautique, programmation, réseaux ou maintenance. Apprenez efficacement grâce à des exercices concrets et un accompagnement personnalisé.
 			</p>
 			<div class="mx-auto lg:mx-0 flex space-x-8 ">
 
-				<div class="w-full bg-gray-100 rounded-full flex justify-between p-1">
+				<div class="w-full bg-gray-100 border border-dotted rounded-full flex justify-between p-1">
 					<input type="text" placeholder="Ques souhaitez-vous apprendre ?" class="px-8 w-full focus:outline-none ">
 					<a href="#" class="py-5 px-10 text-2xl font-bold text-white bg-wecours rounded-full lg:py-4 hover:opacity-70">Commencer</a>
 				</div>
@@ -43,7 +44,7 @@
 			<h1 class="text-3xl font-bold mx-auto">
 				Decouvrez les catégories des cours
 			</h1>
-			<p class="text-md  opacity-90 max-w-lg mx-auto">
+			<p class="text-md  opacity-90 max-w-xl mx-auto">
 				Parcourez nos catégories tendance pour découvrir les meilleures options, offrant un large éventail de sujets adaptés à vos centres d’intérêt et à votre niveau d’expérience.
 			</p>
 		</div>
@@ -53,46 +54,152 @@
 		<div
 			class="mt-14 mx-auto grid grid-cols-1 gap-4 md:grid-cols-4">
 			{# card #}
-			{% for i in 0..7 %}
-      {# {% tabName = ['Design', 'Developpement', 'IT & Logiciel', 'Audio & Video', 'Mobile', 'Bureautique', 'Cybersécurité', 'Réseau'] %} #}
-				<ul class="list bg-base-100 rounded-box shadow-md">
+			{% for i in 1..8 %}
+				{# {% tabName = ['Design', 'Developpement', 'IT & Logiciel', 'Audio & Video', 'Mobile', 'Bureautique', 'Cybersécurité', 'Réseau'] %} #}
+				<ul class="list bg-base-100 rounded-box shadow-md hover:bg-wecours hover:duration-300 hover:text-white">
 
 
-					<li class="list-row">
-						<div><img class="size-15 rounded-box" src="{{asset('/build/images/cat-1.png')}}"/></div>
+					<li class="list-row group cursor-pointer">
+						<div><img class="size-15 rounded-box" src="{{asset('/build/images/cat-'~ i ~'.jpg')}}"/></div>
 						<div>
 							<div class="card-title">Design</div>
-						
+							<div class="text-xs font-semibold opacity-60">13 cours</div>
+
 						</div>
 
-						<button class="btn btn-square btn-ghost">
+
+						<button class="hidden group-hover:block btn btn-square btn-ghost">
 							<svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
 								<g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor">
 									<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
 								</g>
 							</svg>
 						</button>
+
 					</li>
 
 
 				</ul>
-				{# <div class="card bg-base-100 w-96 md:w-80 shadow-sm">
-								<figure>
-									<img src="{{asset('/build/images/cat-2.png')}}" alt="categories" class='object-contain'/>
-								</figure>
-								<div class="card-body">
-									<h2 class="card-title">Design</h2>
-									<p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-									<div class="card-actions justify-end">
-										<button class="btn btn-wecours">Buy Now</button>
-									</div>
-								</div>
-							</div> #}
+
 			{% endfor %}
 			{# end card #}
 		</div>
 		{# end grille des categories #}
 	</div>
 	{# End Categories #}
+
+	{# Cours #}
+	<div
+		class="container mx-auto p-6 mb-24">
+		{# titre #}
+		<div id="title" class="space-y-4 mx-auto text-center">
+
+			<h1 class="text-3xl font-bold mx-auto">
+				Top 10 des cours
+			</h1>
+			<p class="text-md  opacity-90 max-w-xl mx-auto">
+				Découvrez nos 10 meilleurs cours en informatique, soigneusement sélectionnés pour répondre aux besoins actuels du marché. 
+				Du niveau débutant à avancé, nos formations en présentiel couvrent la bureautique, le développement web, la programmation, les réseaux et plus encore. 
+				Apprenez efficacement avec un encadrement professionnel et des exercices pratiques.
+			</p>
+		</div>
+		{# end titre #}
+
+		{# grille des cours #}
+		<div
+			class="mt-14 mx-auto grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-5 ">
+			{# card #}
+			{% for i in 1..10 %}
+				<div class="tooltip tooltip-right">
+
+					<div class="tooltip-content border-wecours text-slate-950 border-dashed bg-white p-6 flex flex-col items-start justify-start space-y-3 shadow-md">
+						<h2 class="text-xl text-neutral text-left">Développeur Python | Formation Complète 2025</h2>
+						<p class="text-wecours font-light">Rentrée le : 12 juillet 2025</p>
+						<p class=" text-left opacity-50">72h au total - Tous les samedis de 7h à 11h</p>
+						<div class="text-left">
+							<p class="text-justify mb-4">
+								Apprenez Python en partant de 0, et créez tous types de projets : Sites Web, Apps, Jeux, Scripts, Hacking éthique, IA
+
+							</p>
+							<ul class="list-decimal space-y-2 ml-8">
+								<li>Apprendre la programmation en partant de zéro</li>
+								<li>Obtenir des bases solides en python</li>
+								<li>Savoir créer des projets complets de A à Z (et pouvoir les partager avec le monde entier)</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="card bg-base-100 w-96 md:w-72 shadow-lg cursor-pointer">
+						<figure>
+							<img src="{{asset('/build/images/cours-'~ i ~'.jpg')}}" alt="categories" class='w-full h-48'/>
+						</figure>
+						<div class="card-body">
+							<h2 class="card-title">Développeur Python | Formation Complète 2025</h2>
+							<p>De 0 à expert Python : la formation la plus complète avec 15 projets (Web, Data, Scripting, Bots), exercices, quiz...</p>
+							<div class="card-actions items-center justify-between">
+								<span class="text-sm font-bold">198 000 Ar</span>
+								<button class="btn btn-sm bg-transparent text-wecours border-wecours text-sm">S'inscrire</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+			{# end card #}
+		</div>
+		{# end grille des cours #}
+	</div>
+	{# End Cours #}
+
+	{# Professeurs #}
+	<div
+		class="container mx-auto p-6">
+		{# titre #}
+		<div id="title" class="space-y-4 mx-auto text-center">
+
+			<h1 class="text-3xl font-bold mx-auto">
+				Nos Professeurs experimentés
+			</h1>
+			<p class="text-md  opacity-90 max-w-xl mx-auto">
+				Nos professeurs sont des experts passionnés par l'informatique, dotés d'une solide expérience en formation et en pratique professionnelle. 
+				Pédagogues et à l'écoute, ils vous accompagnent à chaque étape de votre apprentissage, 
+				en assurant un suivi personnalisé pour vous aider à progresser rapidement et atteindre vos objectifs.
+			</p>
+		</div>
+		{# end titre #}
+
+		{# grille des profs #}
+		<div
+			class="mt-14 mx-auto grid grid-cols-1 gap-4 md:grid-cols-4">
+			{# card #}
+			{% for i in 1..4 %}
+
+
+				<div class="flex-col space-y-4 max-w-sm shadow-2xl">
+					<div class="w-full bg-gray-600">
+
+						<img src="{{asset('/build/images/prof-'~ i ~'.jpg')}}" class="w-full object-contain"/>
+					</div>
+					<div class='px-4'>
+						<h1 class="text-xl font-bold">RANDRIANTSOA Manantena</h1>
+						<p class="opacity-80">
+							Diplômé en informatique, expert certifié en réseaux et développement logiciel.
+						</p>
+						<div class="flex items-center justify-center space-x-8 mt-8 pb-4">
+
+							<a href="#"><img src="https://img.icons8.com/color/48/facebook.png" class="size-8" alt="twitter"></a>
+							<a href="#"><img src="https://img.icons8.com/ios/50/twitterx--v2.png" class="size-8" alt="twitter"></a>
+							<a href="#"><img src="https://img.icons8.com/ios-filled/50/linkedin.png" class="size-8" alt="twitter"></a>
+
+						</div>
+					</div>
+				</div>
+
+			{% endfor %}
+			{# end card #}
+		</div>
+		{# end grille des profs #}
+	</div>
+	{# End Professeurs #}
+
 
 {% endblock %}
