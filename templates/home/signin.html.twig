@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!
+{% endblock %}
+
+{% block body %}
+
+	{# Hero Section #}
+	<div
+		class="container pt-40 flex mx-auto p-6 lg:flex-row">
+		<!-- Image illustration -->
+		<div class="hidden lg:w-2/3 lg:flex items-center justify-center">
+
+			<img src="{{asset('build/images/login-security.gif')}}" alt="login-security" , class='object-contain'>
+		</div>
+
+		<!-- Formulaire -->
+		<div class="mb-24 mx-auto md:w-180 lg:mb-0 lg:w-1/3 p-6 shadow-xl">
+
+			<h1 class="text-3xl font-bold text-center mb-4">Se connecter</h1>
+			<p class="text-center opacity-60">Explorez, apprenez et évoluez avec nous. Profitez d’un parcours éducatif fluide et enrichissant. Commençons !</p>
+			<div class="w-full space-y-8 mt-8">
+				<div class="flex flex-col space-y-2">
+					<label class="text-gray-800 font-semibold text-sm">Adresse mail</label>
+					<input
+					type="text" class="border border-gray-300 p-4 rounded-lg focus:outline-wecours" placeholder="Adresse email">
+				{# {{ form_widget(form.nom) }} #}
+				</div>
+				<div class="flex flex-col space-y-2">
+					<label class="text-gray-800 font-semibold text-sm">Mot de passe</label>
+					<input
+					type="password" class="border border-gray-300 p-4 rounded-lg focus:outline-wecours" placeholder="Mot de passe">
+				{# {{ form_widget(form.prenom) }} #}
+				</div>
+			</div>
+
+			<div
+				class="w-full">
+				<!--Se souvenir-->
+				<div class="flex justify-between mt-4 mb-4">
+
+					<div class"flex">
+						<input type="checkbox">
+						<span class="text-gray-800 text-sm">Se souvenir de moi</span>
+					</div>
+					<div>
+						<a href="#" class="text-wecours text-sm">Mot de passe oublié</a>
+					</div>
+				</div>
+				<button class="btn btn-xl bg-wecours w-full text-white hover:opacity-60">Se connecter</button>
+				<p class="text-center mt-4 text-gray-800 text-sm">
+					<span>Vous n'avez pas encore de compte ?</span>
+					<a href="/signup" class="text-wecours text-sm font-bold">S'inscire ici</a>
+				</p>
+				<p class="py-6 text-sm font-thin text-center">
+					ou se connecter avec
+				</p>
+				<div class="flex flex-col space-x-0 space-y-6 md:flex-row md:space-x-4 md:space-y-0">
+					<button class="flex items-center justify-center py-2 space-x-3 border border-gray-300 rounded shadow-sm hover:bg-opacity-30 hover:shadow-lg hover:-translate-y-0.5 transition duration-150 md:w-1/2">
+						<img src="{{asset('/build/images/facebook.png')}}" alt="" class="w-9">
+						<span class="font-thin">Facebook</span>
+					</button>
+					<button class="flex items-center justify-center py-2 space-x-3 border border-gray-300 rounded shadow-sm hover:bg-opacity-30 hover:shadow-lg hover:-translate-y-0.5 transition duration-150 md:w-1/2">
+						<img src="{{asset('/build/images/google.png')}}" alt="" class="w-9">
+						<span class="font-thin">Google</span>
+					</button>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+	{# End Hero Section #}
+
+
+{% endblock %}
