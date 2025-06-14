@@ -50,6 +50,9 @@ class Trainning
     #[ORM\Column(nullable: true)]
     private ?int $status_id = null;
 
+    #[ORM\OneToOne(mappedBy: 'trainnig_id', cascade: ['persist', 'remove'])]
+    private ?Category $Categories = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -195,6 +198,23 @@ class Trainning
     public function setStatusId(?int $status_id): static
     {
         $this->status_id = $status_id;
+
+        return $this;
+    }
+
+    public function getCategories(): ?Category
+    {
+        return $this->Categories;
+    }
+
+    public function setCategories(Category $Categories): static
+    {
+        // set the owning side of the relation if necessary
+        if ($Categories->getTrainnigId() !== $this) {
+            $Categories->setTrainnigId($this);
+        }
+
+        $this->Categories = $Categories;
 
         return $this;
     }
